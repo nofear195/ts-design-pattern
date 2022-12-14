@@ -64,7 +64,6 @@ npm install
 mkdir src
 touch ./src/main.ts
 mkdir ./src/__tests__
-touch ./src/__tests__/main.test.ts
 mkdir dist
 
 # https://titangene.github.io/article/jest-typescript.html

@@ -1,3 +1,14 @@
-import sum from './sum';
+import { SingletonGreed, Singleton } from './singleton';
 
-console.log(sum(1, 2)); 
+const s1 = Singleton.getInstance()
+
+
+  const s2 =Singleton.getInstance()
+
+
+
+  const s3 = SingletonGreed.getInstance()
+  const s4 = SingletonGreed.getInstance()
+
+  console.log(s3 === s4)
+  console.log(s1 !== undefined)
