@@ -1,4 +1,4 @@
-import { SingletonGreed, Singleton } from './singleton';
+import { SingletonGreed, Singleton } from './singleton/singleton';
 
 const s1 = Singleton.getInstance()
 

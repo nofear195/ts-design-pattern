@@ -1,7 +1,7 @@
 class SingletonGreed {
     private static instance: SingletonGreed = new SingletonGreed();
     constructor() {
-        console.log("init singletonGreed");
+        // console.log("init singletonGreed");
     }
     public static getInstance(): SingletonGreed {
         return this.instance;
@@ -11,11 +11,11 @@ class SingletonGreed {
 class Singleton {
     private static instance: Singleton;
     constructor() {
-        console.log("init singleton");
+        // console.log("init singleton");
     }
     public static getInstance(): Singleton {
         return Singleton.instance ? this.instance : new Singleton;
     }
 }
 
-export {SingletonGreed,Singleton}
+export { SingletonGreed, Singleton }

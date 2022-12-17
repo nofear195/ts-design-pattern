@@ -1,5 +1,5 @@
 
-import { SingletonGreed, Singleton } from '../singleton';
+import { SingletonGreed, Singleton } from './singleton';
 
 test('get the same instance from greed singleton', () => {
   const s1 = SingletonGreed.getInstance()

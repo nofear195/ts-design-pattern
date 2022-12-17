@@ -11,7 +11,14 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sh ./postCreateCommand.sh"
+	"postCreateCommand": "sh ./postCreateCommand.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rvest.vs-code-prettier-eslint"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
