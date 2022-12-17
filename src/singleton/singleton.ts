@@ -14,8 +14,8 @@ class Singleton {
         // console.log("init singleton");
     }
     public static getInstance(): Singleton {
-        return Singleton.instance ? this.instance : new Singleton;
+        return Singleton.instance ? this.instance : new Singleton();
     }
 }
 
-export { SingletonGreed, Singleton }
+export { SingletonGreed, Singleton };
