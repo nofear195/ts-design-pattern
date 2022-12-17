@@ -1,21 +1,25 @@
 class SingletonGreed {
-    private static instance: SingletonGreed = new SingletonGreed();
-    constructor() {
-        // console.log("init singletonGreed");
-    }
-    public static getInstance(): SingletonGreed {
-        return this.instance;
-    }
+  private static instance: SingletonGreed = new SingletonGreed();
+  constructor() {
+    // console.log("init singletonGreed");
+  }
+  public static getInstance(): SingletonGreed {
+    return this.instance;
+  }
 }
 
 class Singleton {
-    private static instance: Singleton;
-    constructor() {
-        // console.log("init singleton");
+  private static instance: Singleton;
+  constructor() {
+    // console.log("init singleton");
+  }
+  public static getInstance(): Singleton {
+    if (!this.instance) {
+      const tmp = new Singleton();
+      this.instance = tmp;
     }
-    public static getInstance(): Singleton {
-        return Singleton.instance ? this.instance : new Singleton();
-    }
+    return this.instance;
+  }
 }
 
 export { SingletonGreed, Singleton };
