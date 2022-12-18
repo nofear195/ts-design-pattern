@@ -6,9 +6,10 @@ This project records my process of learning design patterns and unit test
 
 ### Local environment 
 
+    devcontainer-image : "mcr.microsoft.com/devcontainers/typescript-node:0-18"
     node : v18.12.1
     tsc : 4.9.3
-    devcontainer-image : "mcr.microsoft.com/devcontainers/typescript-node:0-18"
+    jest : 28.1.3
 
 ### reference link & TBD
 
