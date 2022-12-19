@@ -5,7 +5,7 @@ test("play movie", () => {
 
   let result = "";
   let resultList: string[] = [];
-  let volumneList: number[] = [];
+  let volumeList: number[] = [];
   result = facade.playMovie();
   expect(result).toBe("playstation unopened");
 
@@ -17,14 +17,14 @@ test("play movie", () => {
 
   resultList = facade.showAllStatus();
   expect(resultList).toStrictEqual([
-    "stereo volumne is 50",
+    "stereo volume is 50",
     "tv is running on 9",
     "current cd is transformer",
     "unopened",
   ]);
 
-  volumneList = facade.getAllVolumne();
-  expect(volumneList).toStrictEqual([50, 50]);
+  volumeList = facade.getAllVolume();
+  expect(volumeList).toStrictEqual([50, 50]);
 
   facade.turnOffAll();
   resultList = facade.showAllStatus();

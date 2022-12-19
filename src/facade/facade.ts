@@ -44,46 +44,46 @@ class PlayStation extends Electronics {
 }
 
 class Stereo extends Electronics {
-  private volumne: number;
+  private volume: number;
 
   constructor() {
     super();
-    this.volumne = 50;
+    this.volume = 50;
   }
 
-  setVolumne(volumne: number): void {
-    this.volumne = volumne;
+  setVolume(volume: number): void {
+    this.volume = volume;
   }
 
-  getVolumne(): number {
-    return this.volumne;
+  getVolume(): number {
+    return this.volume;
   }
 
   showStatus(): string {
     return this.isPowerOn()
-      ? `stereo volumne is ${this.volumne}`
+      ? `stereo volume is ${this.volume}`
       : "stereo unopened";
   }
 }
 
 class Television extends Electronics {
-  private volumne: number;
+  private volume: number;
   private source: string;
   private channel: number;
 
   constructor() {
     super();
-    this.volumne = 50;
+    this.volume = 50;
     this.source = "tvBox";
     this.channel = 9;
   }
 
-  setVolumne(volumne: number): void {
-    this.volumne = volumne;
+  setVolume(volume: number): void {
+    this.volume = volume;
   }
 
-  getVolumne(): number {
-    return this.volumne;
+  getVolume(): number {
+    return this.volume;
   }
 
   switchSource(source: string): void {
@@ -126,15 +126,15 @@ class RoomFacade {
     this.ktv = new KTVSystem();
   }
 
-  setAllVolumne(volumne: number): void {
-    if (this.stereo.isPowerOn()) this.stereo.setVolumne(volumne);
-    if (this.tv.isPowerOn()) this.tv.setVolumne(volumne);
+  setAllVolume(volume: number): void {
+    if (this.stereo.isPowerOn()) this.stereo.setVolume(volume);
+    if (this.tv.isPowerOn()) this.tv.setVolume(volume);
   }
 
-  getAllVolumne(): number[] {
+  getAllVolume(): number[] {
     const result: number[] = [];
-    if (this.stereo.isPowerOn()) result.push(this.stereo.getVolumne());
-    if (this.tv.isPowerOn()) result.push(this.tv.getVolumne());
+    if (this.stereo.isPowerOn()) result.push(this.stereo.getVolume());
+    if (this.tv.isPowerOn()) result.push(this.tv.getVolume());
     return result;
   }
 
@@ -159,7 +159,7 @@ class RoomFacade {
   readyToPlayMovie(cd: string): void {
     this.stereo.powerOn();
     this.tv.powerOn();
-    this.setAllVolumne(50);
+    this.setAllVolume(50);
     this.tv.switchSource("ps");
     this.ps.powerOn();
     this.ps.putCd(cd);
@@ -189,7 +189,7 @@ class RoomFacade {
     this.stereo.powerOn();
     this.ktv.powerOn();
     this.tv.powerOn();
-    this.setAllVolumne(30);
+    this.setAllVolume(30);
     this.tv.switchSource("ktv");
   }
 
