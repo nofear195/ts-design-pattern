@@ -1,31 +1,3 @@
-// dynamic proxy
-
-interface GameDisplay {
-  display(): string;
-}
-
-class RealGameDisplay implements GameDisplay {
-  display(): string {
-    return this.constructor.name;
-  }
-}
-
-class ProxyGameDisplay implements GameDisplay {
-  private realGameDisplay: RealGameDisplay;
-
-  constructor(realGameDisplay: RealGameDisplay) {
-    this.realGameDisplay = realGameDisplay;
-  }
-
-  display(): string {
-    let result = this.constructor.name; // first and wait for real display
-    result = result + " " + this.realGameDisplay.display(); // run after real display is ready
-    return result;
-  }
-}
-
-// protect proxy
-
 interface Person {
   setLikeCount(like: number): void;
   getLikeCount(): number;
@@ -53,7 +25,7 @@ class PersonJack implements Person {
   }
 }
 
-class ProxyPersonJack implements Person {
+class ProtectProxy implements Person {
   public person: PersonJack;
 
   constructor(person: PersonJack) {
@@ -76,4 +48,4 @@ class ProxyPersonJack implements Person {
   }
 }
 
-export { RealGameDisplay, ProxyGameDisplay, PersonJack, ProxyPersonJack };
+export { PersonJack, ProtectProxy };
